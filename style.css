@@ -93,18 +93,16 @@ a { color: inherit; text-decoration: none; }
   margin-top: 14px;
 }
 
-.hero .berry {
+.hero .berry-img {
   position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle at 32% 30%, #7c8fd9 0%, #3a4bbf 45%, #1d2b8f 100%);
-  box-shadow: inset -8px -10px 24px rgba(10, 16, 70, .45);
-  opacity: .85;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
-.berry.b1 { width: 130px; height: 130px; top: -35px; left: -30px; }
-.berry.b2 { width: 80px;  height: 80px;  top: 40px;  left: 90px; opacity: .55; }
-.berry.b3 { width: 150px; height: 150px; bottom: -45px; right: -35px; }
-.berry.b4 { width: 70px;  height: 70px;  bottom: 70px; right: 120px; opacity: .5; }
+.berry-img.p1 { width: 180px; top: -35px; left: -25px; transform: rotate(-10deg); }
+.berry-img.p2 { width: 100px; top: 70px;  left: 150px; transform: rotate(18deg); opacity: .65; }
+.berry-img.p3 { width: 210px; bottom: -50px; right: -35px; transform: rotate(9deg); }
+.berry-img.p4 { width: 90px;  bottom: 90px; right: 190px; transform: rotate(-24deg); opacity: .55; }
 
 .btn {
   display: inline-block;
@@ -306,6 +304,20 @@ a { color: inherit; text-decoration: none; }
 
 .size-row .size b { display: block; font-size: 22px; color: var(--blue); }
 .size-row .size span { font-size: 14px; color: var(--muted); }
+
+.menu-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.menu-photos img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 30px rgba(30, 45, 140, .07);
+}
 
 .special-banner {
   background: linear-gradient(120deg, var(--blue) 0%, var(--blue-dark) 100%);
