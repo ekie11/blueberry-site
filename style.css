@@ -1,0 +1,372 @@
+/* ============ Blueberry — shared styles ============ */
+:root {
+  --blue: #2233b0;
+  --blue-dark: #16217a;
+  --ink: #1c1c2e;
+  --muted: #6b6f85;
+  --bg: #ffffff;
+  --bg-soft: #f4f6fd;
+  --line: #dfe3f2;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Header ---------- */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px 24px 18px;
+  gap: 14px;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 52px;
+  color: var(--blue);
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 38px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-nav a {
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+
+.main-nav a:hover { color: var(--blue); }
+.main-nav a.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  background: linear-gradient(160deg, #edf1ff 0%, #f9faff 55%, #eef3ff 100%);
+  overflow: hidden;
+  text-align: center;
+  padding: 110px 24px 120px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(38px, 6vw, 64px);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.hero .sub {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(20px, 3vw, 28px);
+  font-style: italic;
+  color: var(--blue);
+  margin-top: 14px;
+}
+
+.hero .berry {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #7c8fd9 0%, #3a4bbf 45%, #1d2b8f 100%);
+  box-shadow: inset -8px -10px 24px rgba(10, 16, 70, .45);
+  opacity: .85;
+}
+
+.berry.b1 { width: 130px; height: 130px; top: -35px; left: -30px; }
+.berry.b2 { width: 80px;  height: 80px;  top: 40px;  left: 90px; opacity: .55; }
+.berry.b3 { width: 150px; height: 150px; bottom: -45px; right: -35px; }
+.berry.b4 { width: 70px;  height: 70px;  bottom: 70px; right: 120px; opacity: .5; }
+
+.btn {
+  display: inline-block;
+  margin-top: 36px;
+  padding: 15px 44px;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: background .2s, color .2s;
+}
+
+.btn:hover { background: var(--blue); color: #fff; }
+.btn.solid { background: var(--blue); color: #fff; }
+.btn.solid:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+
+/* ---------- Sections ---------- */
+.section { padding: 90px 0; }
+.section.soft { background: var(--bg-soft); }
+
+.section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 42px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink);
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--blue);
+  margin: 18px auto 0;
+}
+
+.lead {
+  max-width: 720px;
+  margin: 34px auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+/* ---------- Info cards (location / hours / phone) ---------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.info-grid h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+
+.info-grid p { color: var(--muted); }
+.info-grid strong { color: var(--ink); }
+
+/* ---------- Menu ---------- */
+.menu-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.menu-nav a {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  padding: 9px 20px;
+  border-radius: 999px;
+  color: var(--muted);
+  transition: all .2s;
+}
+
+.menu-nav a:hover { border-color: var(--blue); color: var(--blue); }
+
+.menu-section { padding: 70px 0 10px; }
+
+.menu-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 44px 48px;
+  margin-top: 40px;
+  box-shadow: 0 6px 30px rgba(30, 45, 140, .05);
+}
+
+.menu-card h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.menu-card .card-note {
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.menu-item .name { font-weight: 500; }
+.menu-item .dots {
+  flex: 1;
+  border-bottom: 2px dotted var(--line);
+  transform: translateY(-4px);
+}
+.menu-item .price { font-weight: 600; color: var(--blue); white-space: nowrap; }
+
+.menu-item .desc {
+  display: block;
+  font-size: 15px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 26px;
+  margin-top: 10px;
+}
+
+.choice-grid h4 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 2px solid var(--blue);
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+.choice-grid ul { list-style: none; }
+.choice-grid li { padding: 3px 0; color: var(--muted); }
+
+.tag {
+  display: inline-block;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin: 4px 4px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.note {
+  margin-top: 22px;
+  padding: 14px 18px;
+  background: var(--bg-soft);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.size-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  text-align: center;
+  margin: 10px 0 24px;
+}
+
+.size-row .size {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 8px;
+}
+
+.size-row .size b { display: block; font-size: 22px; color: var(--blue); }
+.size-row .size span { font-size: 14px; color: var(--muted); }
+
+.special-banner {
+  background: linear-gradient(120deg, var(--blue) 0%, var(--blue-dark) 100%);
+  color: #fff;
+  border-radius: 14px;
+  text-align: center;
+  padding: 46px 30px;
+  margin-top: 40px;
+}
+
+.special-banner .star { font-size: 26px; }
+
+.special-banner h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 8px 0 6px;
+}
+
+.special-banner .price { font-size: 24px; font-weight: 600; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--blue-dark);
+  color: #cdd4f5;
+  text-align: center;
+  padding: 60px 24px 40px;
+  margin-top: 90px;
+}
+
+.site-footer .logo { color: #fff; font-size: 40px; margin-bottom: 18px; }
+.site-footer p { font-size: 15px; }
+.site-footer .socials { margin: 18px 0; }
+.site-footer .socials a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.4);
+}
+.site-footer .fine { margin-top: 24px; font-size: 13px; opacity: .6; }
+
+/* ---------- Story page ---------- */
+.story-body {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 18px;
+}
+.story-body p + p { margin-top: 22px; }
+
+@media (max-width: 640px) {
+  .menu-card { padding: 30px 22px; }
+  .logo { font-size: 42px; }
+  .main-nav { gap: 22px; }
+}
