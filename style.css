@@ -182,6 +182,22 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 10px 36px rgba(30, 45, 140, .14);
 }
 
+.hours-block {
+  text-align: center;
+  margin-top: 56px;
+}
+
+.hours-block h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.hours-block p { color: var(--muted); }
+
 /* ---------- Menu ---------- */
 .menu-nav {
   display: flex;
